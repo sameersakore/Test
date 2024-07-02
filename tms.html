@@ -1,0 +1,62 @@
+this tms html page.
+{% extends 'index.html' %}
+{% block content %}
+<div class="oh-wrapper">
+    <form action="/insert" method="post">
+        {% csrf_token %}
+        <div class="row my-4">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="oh-card">
+                    <div class="oh-card__header">
+                        <span class="oh-card__title oh-card__title--sm fw-bold me-2">TimeSheet</span>
+                    </div>
+                    <div class="oh-card__body">
+                        <div class="oh-item oh-item--border-bottom oh-section-edit position-relative">   
+                            <div class="form-group">
+                                <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Enter The Student Name"
+                                name="name"
+                                required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                type="email"
+                                class="form-control mt-2"
+                                placeholder="Enter The Student Email"
+                                name="email"
+                                required
+                                />
+                            </div>
+                            <div class="form-group">
+                                <input
+                                type="number"
+                                class="form-control mt-2"
+                                placeholder="Enter The Student Age"
+                                name="age"
+                                required
+                                />
+                                <div class="form-group mt-2">
+                                <select id="gender" class="form-control" name="gender" required>
+                                    <option selected>Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="others">Others</option>
+                                </select>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="d-grid gap-2">
+                                <button class="oh-btn oh-btn--secondary" type="submit">Submit</button>
+                            </div>
+                        </div>
+                    </div> 
+                </div> 
+            </div>
+        </div>             
+    </form>
+</div>  
+{% endblock content %}
+
