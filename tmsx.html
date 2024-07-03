@@ -1,0 +1,74 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="oh-wrapper">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="row my-4">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="oh-card">
+                    <div class="oh-card__header">
+                        <span class="oh-card__title oh-card__title--sm fw-bold me-2">TimeSheet</span>
+                    </div>
+                    <div class="oh-card__body">
+                        <!-- all field start from here -->
+                         <div class="row">
+                            <div class="col">
+                                <label class="oh-label" for="dob">Date</label><br>
+                                <input type="date" name="dob" id="dob" class="oh-input w-60" required="" placeholder="Dob"> 
+                            </div>
+                            <div class="col"></div>
+                            
+                            <div class="col">
+                                <label class="oh-label"> Hours</label><br>
+                                <input type="number" name="hours_weightage" class="oh-input w-25" value="0" required="" id="id_hours">
+                            </div>
+                            
+                         </div>
+                         <div class="row">
+                            <div class="col">
+                                <!-- <label class="oh-label"> Projects </label><br>
+                                <input type="text" name="ticket_number" class="oh-input w-45" required="" id="id_projects"> -->
+                                <label class="oh-label">Projects</label><br>
+                                <select name="project_list" id="project_list" style="width: 190px;">
+                                    <option value="project_1">Project_1</option>
+                                    <option value="project_2">Project_2</option>
+                                    <option value="project_3" disabled>Project_3</option>
+                                    <option value="project_4">Project_4</option>
+                                    <option selected>Choose project</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <label class="oh-label"> Ticket Number</label><br>
+                                <input type="number" name="ticket_number" class="oh-input w-25" required="" id="id_ticket_number">
+                            </div>
+                            <div class="col">
+                                <label class="oh-label">Task Types</label><br>
+                                <select name="task-type" id="task_type" style="width: 190px;">
+                                    <option value="Task_type_1">Type_1</option>
+                                    <option value="Task_type_2">Type_2</option>
+                                    <option value="Task_type_3" disabled>Type_3</option>
+                                    <option value="Task_type_4">Type_4</option>
+                                    <option selected>Choose Task Types</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label class="oh-label" style="text-align: center;"> Task</label><br>
+                                <input type="text" name="task" class="oh-input w-50" required="" id="id_task">
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col">
+                                <button class="oh-btn oh-btn--secondary" type="submit">Add Task</button>
+                            </div>              
+                        </div>
+                        <!-- all field end from here --> 
+                    </div> 
+                </div>
+            </div>
+        </div>                 
+    </form>
+</div>  
+{% endblock content %}
